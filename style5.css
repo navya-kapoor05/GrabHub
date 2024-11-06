@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: url('menu.png.jpg');
+    background-size: cover;
+    animation: moveBackground 20s infinite linear;
+
+}
+.header {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+    opacity: 80%;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.menu-list {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.details {
+    flex-grow: 1;
+}
+
+.details h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.details .price {
+    font-size: 18px;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+    opacity: 80%;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.filters button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+
+}
+.filters button:hover{
+       transform: scale(1.05);
+       background-color: rgba(135, 59, 59, 0.97);
+       color: white;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.restaurant-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: scale(1.10);
+    background-color: rgb(226, 226, 214);
+
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.restaurant-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.restaurant-card p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.restaurant-card strong {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,172 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://image.slidesdocs.com/responsive-images/background/food-delivery-in-3d-visualization-powerpoint-background_6181b30c52__960_540.jpg');
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    /*background-color: #f8f9fa;*/
+    color: #333;
+    line-height: 1.6;
+}
+ 
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    /*justify-content: right;*/
+    height:60px;
+    opacity: 80%;
+   
+    
+}
+.nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+.nav a:hover{
+    color: #c21e15;
+}
+/* Heading Animation */
+.animated-heading {
+    font-size: 2.5rem;
+    background-color: #c21e15;
+    color: white;
+    padding: 20px 0;
+    animation: slideIn 4s ease-in-out;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.offers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.offer-card {
+    background-color: white;
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.offer-card h2 {
+    font-size: 1.5rem;
+    color: #c21e15;
+    margin-bottom: 10px;
+}
+
+.offer-card p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.promo-code {
+    font-weight: bold;
+    background-color: #ffedcc;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.offer-card button {
+    background-color: #c21e15;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.offer-card button:hover {
+    background-color: #c21e15;
+}
+.footer {
+    background-color: #333;
+    padding: 40px 60px;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo img {
+    width: 80px;
+    height: 70px;
+}
+
+.footer-section {
+    margin-right: 40px;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffdd00;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 24px;
+}
+@media (max-width: 768px) {
+    .category-item img, .restaurant-item img, .restaurant-chain-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
