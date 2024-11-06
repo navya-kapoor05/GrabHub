@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support | Food Delivery</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Help & Support</h1>
+        <p>Your questions answered, and help is always nearby.</p>
+    </header>
+
+    <main>
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">How do I place an order?</button>
+                <div class="faq-answer">
+                    <p>To place an order, simply browse through the menu, select your items, and click on 'Place Order'. You will be prompted to provide delivery details and payment options.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What payment methods are accepted?</button>
+                <div class="faq-answer">
+                    <p>We accept credit/debit cards, PayPal, and popular e-wallets. You can select your preferred payment method at checkout.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I track my order?</button>
+                <div class="faq-answer">
+                    <p>You can track your order in real-time from the 'My Orders' section on your account page. You will also receive SMS notifications with updates on your order status.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">I want to partner my restaurant with GrabHub</button>
+                <div class="faq-answer">
+                    <button>SEND AN EMAIL</button>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What are the mandatory documents needed to list my restaurant on GrabHub?</button>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Copies of the below documents are mandatory</li>
+                        <li>FSSAI Licence OR FSSAI Acknowledgement</li>
+                        <li>Pan Card</li>
+                        <li>Cancelled Cheque OR bank Passbook</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">I want to partner my restaurant with GrabHub</button>
+                <div class="faq-answer">
+                    <button>SEND AN EMAIL</button>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Any other Queries</button>
+                <div class="faq-answer">
+                    <button>SEND AN EMAIL</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Delivery. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const faqQuestions = document.querySelectorAll(".faq-question");
+    
+        faqQuestions.forEach(function (question) {
+            question.addEventListener("click", function () {
+                const answer = this.nextElementSibling;
+                answer.style.display = answer.style.display === "block" ? "none" : "block";
+            });
+        });
+    
+        });
+    </script>
+</body>
+</html>
