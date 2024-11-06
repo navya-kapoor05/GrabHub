@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Food Delivery</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    
+    <header>
+        <h1 class="animated-heading">Shopping Cart</h1>
+       
+    </header>
+
+    <main>
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
+
+            <div class="cart-summary">
+                <h3>Total: ₹<span id="cart-total">0.00</span></h3>
+                <button id="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="logo">
+            <img src="logo.png.jpg" alt="GrabHub Logo">
+        </div>
+        
+        <div class="footer-section">
+            <h3>About GrabHub</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Popular Cafes</a></li>
+                <li><a href="#">Create an account</a></li>
+                <li><a href="#">Already have an account</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>For Restaurants</h3>
+            <ul>
+                <li><a href="#">Partner With Us</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Learn More</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>SOCIAL LINKS</h3>
+            <div class="social-links">
+                <a href="#"><img class="social-icon" src="https://banner2.cleanpng.com/20190125/rjc/kisspng-logo-facebook-instagram-portable-network-graphics-services-cardiologist-and-cath-lab-clinic-and-1713908243656.webp" alt="Facebook"></a>
+                <a href="#"><img class="social-icon" src="https://icon2.cleanpng.com/20240323/qsl/transparent-social-media-dynamic-colorful-twitter-icon-for-social-media65fec410156be8.61783516.webp" alt="Instagram"></a>
+                <a href="#"><img class="social-icon" src="https://www.clipartmax.com/png/middle/176-1763920_facebook-circle-twitter-circle-twitter-logo-round-png.png" alt="Twitter"></a>
+                <a href="#"><img class="social-icon" src="https://image.pngaaa.com/36/4929036-middle.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const cartItems = [
+            { id: 1, name: "Pizza", price: 299.99, quantity: 1 },
+            { id: 2, name: "Burger", price: 199.99, quantity: 2 },
+            { id: 3, name: "Pasta", price: 349.99, quantity: 1 }
+        ];
+        
+        // Function to render cart items
+        function renderCart() {
+            const cartTable = document.getElementById('cart-items');
+            cartTable.innerHTML = '';
+        
+            let total = 0;
+        
+            cartItems.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+        
+                const row = `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>₹${item.price.toFixed(2)}</td>
+                        <td>
+                            <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)">
+                        </td>
+                        <td>₹${subtotal.toFixed(2)}</td>
+                        <td><button onclick="removeItem(${item.id})">Remove</button></td>
+                    </tr>
+                `;
+                cartTable.insertAdjacentHTML('beforeend', row);
+            });
+        
+            document.getElementById('cart-total').textContent = total.toFixed(2);
+        }
+        
+        // Function to update the quantity of an item
+        function updateQuantity(itemId, newQuantity) {
+            const item = cartItems.find(item => item.id === itemId);
+            if (item) {
+                item.quantity = parseInt(newQuantity, 10);
+                renderCart();
+            }
+        }
+        
+        // Function to remove an item from the cart
+        function removeItem(itemId) {
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            if (itemIndex > -1) {
+                cartItems.splice(itemIndex, 1);
+                renderCart();
+            }
+        }
+        
+        // Initial render of the cart
+        document.addEventListener('DOMContentLoaded', renderCart);
+        
+        // Checkout button event
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            alert('Proceeding to checkout!');
+        });
+        </script>
+</body>
+</html>
